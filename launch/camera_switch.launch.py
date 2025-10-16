@@ -9,7 +9,7 @@ def generate_launch_description():
             executable="usb_cam_node_exe",
             name="front_camera",
             parameters=[
-                {"video_device": "/dev/video_front"}
+                {"video_device": "/dev/video0"}
             ],
             remappings=[
                 ("image_raw", "front_camera/image_raw")  # Umbenennung des Topics
