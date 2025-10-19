@@ -5,8 +5,8 @@ def generate_launch_description():
     return LaunchDescription([
         # Vordere Kamera (usb_cam)
         Node(
-            package="libcamera_ros",
-            executable="libcamera_node",
+            package="camera_ros",
+            executable="camera_node",
             name="front_camera",
             parameters=[
                 {"video_device": "/dev/video0"}
