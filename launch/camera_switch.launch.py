@@ -5,8 +5,8 @@ def generate_launch_description():
     return LaunchDescription([
         # Vordere Kamera (usb_cam)
         Node(
-            package="usb_cam",
-            executable="usb_cam_node_exe",
+            package="libcamera_ros",
+            executable="libcamera_node",
             name="front_camera",
             parameters=[
                 {"video_device": "/dev/video0"}
@@ -16,17 +16,17 @@ def generate_launch_description():
             ]
         ),
         # Hintere Kamera (usb_cam)
-        Node(
-            package="usb_cam",
-            executable="usb_cam_node_exe",
-            name="back_camera",
-            parameters=[
-                {"video_device": "/dev/video_back"}
-            ],
-            remappings=[
-                ("image_raw", "back_camera/image_raw")  # Umbenennung des Topics
-            ]
-        ),
+        #Node(
+        #    package="usb_cam",
+        #    executable="usb_cam_node_exe",
+        #    name="back_camera",
+        #    parameters=[
+        #        {"video_device": "/dev/video_back"}
+        #    ],
+        #    remappings=[
+        #        ("image_raw", "back_camera/image_raw")  # Umbenennung des Topics
+        #    ]
+        #),
         # Kamera-Switch-Knoten
         Node(
             package="dbg_camera_switch",
