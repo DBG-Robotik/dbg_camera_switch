@@ -9,7 +9,12 @@ def generate_launch_description():
             executable="camera_node",
             name="front_camera",
             parameters=[
-                {"video_device": "/dev/video20"}
+                {'camera_name': 'front_camera',
+                'video_device': '/dev/video0',
+                'camera_info_url': '',  # Leer lassen, um libcamera zu nutzen
+                'pixel_format': 'MJPEG',  # oder 'RGB8', je nach Kamera
+                'io_method': 'mmap',  # Standard für libcamera
+                }
             ],
             remappings=[
                 ("image_raw", "front_camera/image_raw")  # Umbenennung des Topics
