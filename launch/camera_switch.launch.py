@@ -8,9 +8,9 @@ def generate_launch_description():
             package="camera_ros",
             executable="camera_node",
             name="front_camera",
-            #parameters=[
-                #{"video_device": "/dev/video0"}
-            #],
+            parameters=[
+                {"video_device": "/dev/video20"}
+            ],
             remappings=[
                 ("image_raw", "front_camera/image_raw")  # Umbenennung des Topics
             ]
